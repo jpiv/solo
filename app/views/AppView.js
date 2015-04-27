@@ -10,6 +10,10 @@ var AppView = Backbone.View.extend({
       { collection: this.model.get('wordList') }
     ).render());
 
+    this.$el.append(new InputView(
+      { model: this.model.get('input') }
+    ).render());
+
     $('body').append(this.el);
     console.log('Rendered.');
   }

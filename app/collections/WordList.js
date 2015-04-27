@@ -7,7 +7,8 @@ var WordList = Backbone.Collection.extend({
   },
 
   generateWords: function () {
-    this.add(new WordModel({word: 'DOG'}))
+    this.add(new WordModel({word: 'DOG'}));
+    this.add(new WordModel({word: 'CAT'}));
   }
 
 });
