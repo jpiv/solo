@@ -9,17 +9,25 @@ var AppModel = Backbone.Model.extend({
   },
 
   wordCommit: function (word) {
-    console.log(word);
-    this.inputBox.clear();
+    var wordIndex = this.get('wordIndex');  
+    if(this.wordList.length > wordIndex) {
+      console.log("Word Accepted:", word);
+      this.set('wordIndex', wordIndex + 1);
+      this.inputBox.clear();
+    } 
   },
 
   compareWord: function (word) {
-    var currentWord = this.wordList.at(this.get('wordIndex')).get('word');
-    currentWord = currentWord.slice(0, word.length);
-    if(word !== currentWord)
-      console.log(currentWord, word, ':invalid word');
-    else
-      console.log('valid word');
+    var currentWord;
+    var wordIndex = this.get('wordIndex');
+    if(this.wordList.length > wordIndex) {
+      currentWord = this.wordList.at(wordIndex).get('word');
+      currentWord = currentWord.slice(0, word.length);
+      if(word !== currentWord)
+        console.log(currentWord, word, ':invalid word');
+      else
+        console.log('valid word');
+    }
   }
 
 

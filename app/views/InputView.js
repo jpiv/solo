@@ -4,7 +4,7 @@ var InputView = Backbone.View.extend({
 
   initialize: function () {
     this.model.on('clear', this.clearInput, this);
-    this.$input = $("<input type='text' size='32' />");
+    this.$input = $("<input type='text' size='32' autofocus/>");
   },
 
   clearInput: function () {
