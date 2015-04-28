@@ -3,13 +3,18 @@ var InputView = Backbone.View.extend({
   el: "<div class='inputView'></div>",
 
   initialize: function () {
+    this.model.on('clear', this.clearInput, this);
+    this.$input = $("<input type='text' size='32' />");
+  },
+
+  clearInput: function () {
+    this.$input.val("");
   },
 
   render: function () {
-    var $input = $("<input type='text' size='32' />");
-    var triggerChange = this.model.textChange.bind(this);
-    $input.on('input', triggerChange);
-    this.$el.append($input);
+    var triggerChange = this.model.textChange.bind(this.model);
+    this.$input.on('input', triggerChange);
+    this.$el.html(this.$input);
 
     return this.$el;
   }

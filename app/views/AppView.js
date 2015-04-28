@@ -7,11 +7,11 @@ var AppView = Backbone.View.extend({
 
   render: function () {
     this.$el.append(new WordListView(
-      { collection: this.model.get('wordList') }
+      { collection: this.model.wordList }
     ).render());
 
     this.$el.append(new InputView(
-      { model: this.model.get('input') }
+      { model: this.model.inputBox }
     ).render());
 
     $('body').append(this.el);
