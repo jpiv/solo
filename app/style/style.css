@@ -6,9 +6,34 @@ body {
   padding-top: 2%
 }
 
+.timerView{
+  position: relative;
+  display: inline-block;
+  left: 43%;
+  color: #fff;
+}
+
 .app {
   width: 100%;
 }
+.statsView {
+  position: relative;
+  left: 37%;
+  width: 26%;
+  margin-top: 1.5em;
+  color: rgb(232, 232, 233);
+  border: 3px solid;
+  border-color: rgb(141, 141, 145);
+  border-radius: 14px;
+  padding: 1em;
+}
+
+.statsHeader {
+  font-weight: bold;
+  text-align: center;
+  font-size: 14pt;
+}
+
 span {
   padding-right: .2em;
   padding-left: .2em;
@@ -30,9 +55,14 @@ span {
 .inputView {
   background-color: #FFF;
   position: relative;
+  display: inline-block;
   left: 41%;
   width: 18%;
   margin-top: 3%;
+}
+
+.input {
+  width: 100%;
 }
 
 input {

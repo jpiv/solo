@@ -152,7 +152,7 @@ add
 food
 saw
 left
-don’t
+don't
 few
 while
 important
@@ -266,7 +266,7 @@ home
 us
 move
 still
-Ieam
+learn
 should
 American
 world
@@ -298,7 +298,7 @@ music
 fish
 birds
 since
-didn’t
+didn't
 color
 area
 problem
@@ -372,7 +372,7 @@ field
 pulled
 cried
 war
-I’ll
+I'll
 travel
 draw
 plan

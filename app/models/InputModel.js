@@ -5,8 +5,10 @@ var InputModel = Backbone.Model.extend({
     var lastChar = _.last(text);
     if(lastChar !== " ")
       this.trigger('wordChanged', text);
-    else
+    else{
+      this.trigger('wordChanged', text);
       this.trigger('wordCommited', text.slice(0,-1));
+    }
   },
 
   clear: function () {

@@ -8,13 +8,10 @@ var WordView = Backbone.View.extend({
   },
 
   onBad: function () {
-    console.log('bad');
     this.$el.addClass("wordBad");
-    console.log(this.$el);
   },
 
   onGood: function () {
-    console.log('good');
     this.$el.addClass("wordGood");
   },
 
