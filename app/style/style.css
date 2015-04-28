@@ -1,7 +1,49 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14pt;
+  background-repeat: repeat;
+  background-image: url('../assets/bg.png'); 
+  padding-top: 2%
+}
+
+.app {
+  width: 100%;
+}
+span {
+  padding-right: .2em;
+  padding-left: .2em;
+  display: inline-block;  
+}
+
+.wordList {
+  background-color: #FFF;
+  padding-top: .5em;
+  padding-bottom: .7em;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: relative;
+  left: 25%;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.inputView {
+  background-color: #FFF;
+  position: relative;
+  left: 41%;
+  width: 18%;
+  margin-top: 3%;
+}
+
+input {
+  font-size: 12pt;
+  line-height: 2em;
+}
+
 .wordGood {
-  background-color: Green;
+  background-color: rgba(66, 192, 46, .75);
 }
 
 .wordBad {
-  background-color: Red;
+  background-color: rgba(255, 31, 31, .75);
 }

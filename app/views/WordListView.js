@@ -9,7 +9,6 @@ var WordListView = Backbone.View.extend({
     this.collection.each(function (val, i) {
       wordView = new WordView({ model: val }).render(i);
       this.$el.append(wordView);
-      this.$el.append(" ");
     }, this);
 
     console.log('Rendered word list.');
