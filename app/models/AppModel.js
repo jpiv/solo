@@ -17,11 +17,21 @@ var AppModel = Backbone.Model.extend({
     var wordIndex = this.get('wordIndex');  
     if(this.wordList.length > wordIndex) {
       currentWord = this.wordList.at(wordIndex)
-        .commitWord(this.compareWord(word));
+        .commitWord(this.checkWord(word));
 
       this.set('wordIndex', wordIndex + 1);
       this.inputBox.clear();
     } 
+  },
+
+  checkWord: function (word) {
+    var currentWord;
+    var wordIndex = this.get('wordIndex');
+    if(this.wordList.length > wordIndex) {
+      currentWord = this.wordList.at(wordIndex).get('word');
+      if(word !== currentWord) return false;
+      else return true;
+    }
   },
 
   compareWord: function (word) {
