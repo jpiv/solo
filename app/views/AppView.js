@@ -3,9 +3,11 @@ var AppView = Backbone.View.extend({
 
   initialize: function () {
     this.render();
+    this.model.on('sync', this.render, this);
   },
 
   render: function () {
+    this.$el.html("");
     this.$el.append(new WordListView(
       { collection: this.model.wordList }
     ).render());

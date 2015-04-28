@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ["app/views/*.js", "app/models/*.js"],
-        dest: "app/built.js"
+        dest: "app/build/built.js"
       }
     },
 
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'app/built.min.js': "app/built.js"
+          'app/build/built.min.js': "app/built.js"
         }
       }
     }

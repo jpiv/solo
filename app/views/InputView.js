@@ -4,7 +4,17 @@ var InputView = Backbone.View.extend({
 
   initialize: function () {
     this.model.on('clear', this.clearInput, this);
+    this.model.on('wordBad', this.wordBad, this);
+    this.model.on('wordGood', this.wordGood, this);
     this.$input = $("<input type='text' size='32' autofocus/>");
+  },
+
+  wordBad: function () {
+    this.$input.addClass("wordBad");
+  },
+
+  wordGood: function () {
+    this.$input.removeClass("wordBad");
   },
 
   clearInput: function () {

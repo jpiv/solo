@@ -3,16 +3,17 @@ var WordListView = Backbone.View.extend({
   el: "<div class='wordList'></div>",
 
   render: function () {
-    var $wordContainer = $('<span></span>');
-    var html = "";
+    var wordView;
 
+    this.$el.html("");
     this.collection.each(function (val, i) {
-      $wordContainer.attr('id', i);
-      $wordContainer.text(val.get('word'));
-      html += $wordContainer.prop('outerHTML') + " ";
+      wordView = new WordView({ model: val }).render(i);
+      this.$el.append(wordView);
+      this.$el.append(" ");
     }, this);
 
-    return this.$el.html(html);
+    console.log('Rendered word list.');
+    return this.$el;
   }
 
 });

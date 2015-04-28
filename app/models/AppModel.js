@@ -6,16 +6,19 @@ var AppModel = Backbone.Model.extend({
     this.set('wordIndex', 0);
     this.inputBox.on('wordChanged', this.compareWord, this);
     this.inputBox.on('wordCommited', this.wordCommit, this);
+    this.wordList.on('sync', this.synced, this);
   },
+
+  synced: function () {
+    this.trigger('sync');
+  },  
 
   wordCommit: function (word) {
     var wordIndex = this.get('wordIndex');  
     if(this.wordList.length > wordIndex) {
-      if(this.compareWord(word)) {
-        console.log("Word Accepted:", word);
-      } else {
-        console.log("Word Failed:", word);
-      }
+      currentWord = this.wordList.at(wordIndex)
+        .commitWord(this.compareWord(word));
+
       this.set('wordIndex', wordIndex + 1);
       this.inputBox.clear();
     } 
@@ -28,15 +31,13 @@ var AppModel = Backbone.Model.extend({
       currentWord = this.wordList.at(wordIndex).get('word');
       currentWord = currentWord.slice(0, word.length);
       if(word !== currentWord) {
-        console.log(currentWord, word, ':invalid word');
+        this.inputBox.trigger('wordBad');
         return false;
       }
       else {
-        console.log('valid word');
+        this.inputBox.trigger('wordGood');
         return true;
       }
     }
   }
-
-
 });
