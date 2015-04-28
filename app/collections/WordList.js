@@ -1,14 +1,21 @@
 var WordList = Backbone.Collection.extend({
 
   model: WordModel,
+  url: "/words",  
 
   initialize: function () {
-    this.generateWords();
+    this.fetch();
+    this.on('sync', this.synced);
   },
 
-  generateWords: function () {
-    this.add(new WordModel({word: 'dog'}));
-    this.add(new WordModel({word: 'cat'}));
+  synced: function () {
+    console.log('synced');
+    var numWords = 200;
+    var totalWords = this.length;
+    console.log(totalWords);
+    for(var i = 0; i < totalWords; i++){
+
+    }
   }
 
 });

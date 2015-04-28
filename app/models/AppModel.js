@@ -11,7 +11,11 @@ var AppModel = Backbone.Model.extend({
   wordCommit: function (word) {
     var wordIndex = this.get('wordIndex');  
     if(this.wordList.length > wordIndex) {
-      console.log("Word Accepted:", word);
+      if(this.compareWord(word)) {
+        console.log("Word Accepted:", word);
+      } else {
+        console.log("Word Failed:", word);
+      }
       this.set('wordIndex', wordIndex + 1);
       this.inputBox.clear();
     } 
@@ -23,10 +27,14 @@ var AppModel = Backbone.Model.extend({
     if(this.wordList.length > wordIndex) {
       currentWord = this.wordList.at(wordIndex).get('word');
       currentWord = currentWord.slice(0, word.length);
-      if(word !== currentWord)
+      if(word !== currentWord) {
         console.log(currentWord, word, ':invalid word');
-      else
+        return false;
+      }
+      else {
         console.log('valid word');
+        return true;
+      }
     }
   }
 
