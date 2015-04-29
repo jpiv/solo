@@ -1,10 +1,13 @@
 // Server
 var express = require('express');
+var bodyParser = require('body-parser');
+var db = require('./dbHandler.js');
 var fs = require('fs');
 
 var app = express();
 var port = 8080;
 var _dir = __dirname.slice(0,-7);
+app.use(bodyParser.json());
 app.use(express.static(_dir + '/app'));
 
 app.get("/words", function (req, res) {
@@ -23,6 +26,9 @@ app.get("/words", function (req, res) {
   });
   
 });
+
+
+app.post('/savestats', db.handlePOST);
 
 console.log('Server is listening on port', port);
 app.listen(port);

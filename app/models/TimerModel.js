@@ -1,7 +1,7 @@
 var TimerModel = Backbone.Model.extend({
 
   initialize: function () {
-    this.timeLeft = 60;
+    this.timeLeft = 30;
     this.finished = false;
     this.timer = 0;
     this.isTicking = false;

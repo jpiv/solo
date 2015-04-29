@@ -13,6 +13,29 @@ body {
   color: #fff;
 }
 
+.saveStats {
+  float: right;
+  color: rgb(35, 35, 36);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  width: 22%;
+  height: 2em;
+  border: none;
+  border-radius: 8px;
+}
+
+.saveStats:hover {
+  background-color: rgb(232, 232, 233);
+}
+
+.saveStats:focus {
+  outline: none;
+}
+
+.saveStats:active {
+  background-color: rgba(149, 180, 230, 1);
+}
+
 .app {
   width: 100%;
 }
@@ -20,12 +43,14 @@ body {
   position: relative;
   left: 37%;
   width: 26%;
+  height: 18%;
   margin-top: 1.5em;
   color: rgb(232, 232, 233);
   border: 3px solid;
   border-color: rgb(141, 141, 145);
   border-radius: 14px;
   padding: 1em;
+  padding-bottom: 1.6em;
 }
 
 .statsHeader {
@@ -49,7 +74,7 @@ span {
   position: relative;
   left: 25%;
   width: 50%;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 .inputView {

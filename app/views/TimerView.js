@@ -1,6 +1,6 @@
 var TimerView = Backbone.View.extend ({
 
-  el: "<span class='timerView'>60</span>",
+  el: "<span class='timerView'>30</span>",
 
   initialize: function () {
     this.model.on('tick', this.render, this)

@@ -24,7 +24,7 @@ var AppModel = Backbone.Model.extend({
   wordCommit: function (word) {
     var wordIndex = this.get('wordIndex');  
     var isValid;
-    console.log(this.timer.finished)
+    
     if(this.wordList.length > wordIndex && !this.timer.finished) {
       isValid = this.checkWord(word);
       currentWord = this.wordList.at(wordIndex)
