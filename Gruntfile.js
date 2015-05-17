@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     
     watch: {
       options: {},
-      files: ["app/views/*.js", "app/models/*.js"],
+      files: ["app/views/*.js", "app/models/*.js", "app/collections/*.js"],
       tasks: ['concat','uglify']
     },
 
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         separator: ";"
       },
       dist: {
-        src: ["app/views/*.js", "app/models/*.js"],
+        src: ["app/views/*.js", "app/models/*.js", "app/collections/*.js"],
         dest: "app/build/built.js"
       }
     },
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'app/build/built.min.js': "app/built.js"
+          'app/build/built.min.js': "app/build/built.js"
         }
       }
     }

@@ -19,9 +19,9 @@ var StatsView = Backbone.View.extend({
     }
 
     $stats.html(statsHtml);
-    $stats.append(new SaveStatsView(
-      { model: new SaveStatsModel(this.model.stats) }
-    ).render());
+    // $stats.append(new SaveStatsView(
+    //   { model: new SaveStatsModel(this.model.stats) }
+    // ).render());
     this.$el.html($stats);
     this.$el.hide();
     if(timeOut) this.$el.slideDown(700);

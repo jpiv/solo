@@ -1,23 +1,17 @@
 var fs = require('fs');
-fs.readFile('words.txt', function (err, data) {
+fs.readFile('app/words/parsedWords.txt', function (err, data) {
 
-  var newData = data.toString()
-  var data2 = "";
+  var strData = data.toString()
+  var resultData = '';
   var c = 0;
-  for(var i = 0; i < newData.length; i++) {
-    if(newData[i] === "\n")
-      c++;
-    else
-      c=0;
-    if(newData[i] === " "){
-      data2 += "\n";
-      
-    }
-    else if (c < 2){
-      data2 += newData[i];
-    }
-  }
-  fs.writeFile('parsedWords.txt', data2,function () {});
-  console.log(data2)
+  for(var i = 0; i < strData.length; i++) {
+    resultData += strData[i];
 
+    if (strData[i] === '\n') {
+      resultData += '+ "';
+    } else if (strData[i + 1] === '\n')
+        resultData += '\\n"';
+  }
+  fs.writeFile('app/words/parsedWords.txt', resultData, function () {});
+  console.log(resultData);
 });
